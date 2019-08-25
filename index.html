@@ -112,21 +112,21 @@ function playAudio() {
 
 <script type='text/javascript'>
 
-  (function()
+(function()
+{
+  if( window.localStorage )
   {
-    if( window.localStorage )
+    if( !localStorage.getItem('firstLoad') )
     {
-      if( !localStorage.getItem('firstLoad') )
-      {
-        localStorage['firstLoad'] = true;
-        window.location.reload();
-      }  
-      else
-        localStorage.removeItem('firstLoad');
-    }
-  })();
-  
-  </script>
+      localStorage['firstLoad'] = true;
+      window.location.reload();
+    }  
+    else
+      localStorage.removeItem('firstLoad');
+  }
+})();
+
+</script>
 
 </HEAD>
 
