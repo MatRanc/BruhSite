@@ -110,11 +110,23 @@ function playAudio() {
   gtag('config', 'UA-120433956-2');
 </script>
 
+<script type='text/javascript'>
 
-
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-<meta http-equiv="Pragma" content="no-cache" />
-<meta http-equiv="Expires" content="0" />
+  (function()
+  {
+    if( window.localStorage )
+    {
+      if( !localStorage.getItem('firstLoad') )
+      {
+        localStorage['firstLoad'] = true;
+        window.location.reload();
+      }  
+      else
+        localStorage.removeItem('firstLoad');
+    }
+  })();
+  
+  </script>
 
 </HEAD>
 
